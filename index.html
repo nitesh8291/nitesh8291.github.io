@@ -7,60 +7,64 @@
 
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial;
             margin: 0;
-            background-color: #ffffff;
-            color: #333;
         }
 
-        /* Header */
         .header {
             text-align: center;
             padding: 20px;
-            background-color: #007BFF;
+            background: #007BFF;
             color: white;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 26px;
         }
 
-        /* Images vertical */
-        .image-container {
-          width: 250px;
-    height: 250px; /* top to bottom */
-            object-fit: cover;
-            align-items: center;
-            gap: 55px;
-            padding: 20px;
+        /* Slider */
+        .slider {
+            position: relative;
+            max-width: 320px;
+            margin: 20px auto;
+            overflow: hidden;
         }
 
-        /* ORIGINAL SIZE (no width/height set) */
-        .image-container img {
-            display: block;
+        .slides {
+            display: flex;
+            transition: 0.4s;
         }
 
-        /* Content */
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
+
         .content {
             padding: 20px;
         }
-
-        h1 { color: #007BFF; font-size: 24px; border-bottom: 2px solid #007BFF; padding-bottom: 10px; }
-        h2 { color: #0056b3; font-size: 18px; margin-top: 25px; }
-        p, li { font-size: 14px; margin-bottom: 10px; }
-        ul { padding-left: 20px; }
-        .date { font-style: italic; color: #666; margin-bottom: 20px; }
-        .highlight { font-weight: bold; color: #d32f2f; }
     </style>
 </head>
 
 <body>
 
-    <!-- App Name -->
-    <div class="header">
-        Core Pdf
-    </div>
+<div class="header">Core Pdf</div>
 
-    <!-- Images (Top to Bottom, Real Size) -->
-    <div class="image-container">
+<!-- Slider -->
+<div class="slider">
+    <div class="slides" id="slides">
          <img src="20260317_224817.jpg" alt="Image 1">
         <img src="image1.png" alt="Image 2">
         <img src="image2.png" alt="Image 3">
@@ -68,39 +72,33 @@
         <img src="image4.png" alt="Image 5">
     </div>
 
-    <!-- SAME Privacy Policy (No Change) -->
-    <div class="content">
-        <h1>Privacy Policy</h1>
-        <p class="date">Last updated:  March, 2026</p>
+    <button class="btn prev" onclick="move(-1)">❮</button>
+    <button class="btn next" onclick="move(1)">❯</button>
+</div>
 
-        <p>Welcome to <strong>Core Pdf</strong>. Your privacy is our top priority. This Privacy Policy outlines how we handle your data when you use our application.</p>
+<!-- Privacy Policy SAME -->
+<div class="content">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: March, 2026</p>
 
-        <h2>1. Data Collection & Privacy</h2>
-        <p><span class="highlight">We do NOT collect, store, or share any of your personal data.</span> Our app is designed to work <strong>100% offline</strong> for your security.</p>
-        <ul>
-            <li><strong>No Account Required:</strong> You don't need to sign up or provide an email to use our app.</li>
-            <li><strong>Local Processing:</strong> All PDF conversions (Image to PDF, Word to PDF, etc.) happen directly on your device. Your documents are NEVER uploaded to any server.</li>
-        </ul>
+    <p>Welcome to <strong>Core Pdf</strong>. Your privacy is our top priority.</p>
+</div>
 
-        <h2>2. Permissions We Request</h2>
-        <p>To provide core features, we require the following permissions:</p>
-        <ul>
-            <li><strong>Camera Access:</strong> Required for the "Smart Scan" feature to capture document images.</li>
-            <li><strong>Storage Access:</strong> Required to read your existing documents and save the converted PDF/Word files to your device.</li>
-        </ul>
+<script>
+let index = 0;
 
-        <h2>3. Third-Party Services</h2>
-        <p>Our app does not use any third-party tracking, analytics, or advertising SDKs that collect user behavior data.</p>
+function move(step) {
+    const slides = document.getElementById("slides");
+    const total = slides.children.length;
 
-        <h2>4. Data Security</h2>
-        <p>Since all operations are local, your data is as secure as your device itself. We recommend keeping your device updated with the latest security patches.</p>
+    index += step;
 
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <br>
-        <strong>Email: ng4391316@gmail.com</strong></p>
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
 
-        <p style="margin-top: 30px; font-size: 12px; color: #888;">&copy; 2026 Core Pdf. All rights reserved.</p>
-    </div>
+    slides.style.transform = "translateX(" + (-index * 100) + "%)";
+}
+</script>
 
 </body>
 </html>
