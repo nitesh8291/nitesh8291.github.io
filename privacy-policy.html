@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Core Pdf</title>
+    <title>Core Pdf</title>
+
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; padding: 20px; background-color: #ffffff; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Image Section */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Privacy Policy */
+        .content {
+            padding: 20px;
+        }
+
         h1 { color: #007BFF; font-size: 24px; border-bottom: 2px solid #007BFF; padding-bottom: 10px; }
         h2 { color: #0056b3; font-size: 18px; margin-top: 25px; }
         p, li { font-size: 14px; margin-bottom: 10px; }
@@ -14,36 +53,53 @@
         .highlight { font-weight: bold; color: #d32f2f; }
     </style>
 </head>
+
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="date">Last updated:  March, 2026</p>
 
-    <p>Welcome to <strong>Core Pdf</strong>. Your privacy is our top priority. This Privacy Policy outlines how we handle your data when you use our application.</p>
+    <!-- App Name -->
+    <div class="header">
+        Core Pdf
+    </div>
 
-    <h2>1. Data Collection & Privacy</h2>
-    <p><span class="highlight">We do NOT collect, store, or share any of your personal data.</span> Our app is designed to work <strong>100% offline</strong> for your security.</p>
-    <ul>
-        <li><strong>No Account Required:</strong> You don't need to sign up or provide an email to use our app.</li>
-        <li><strong>Local Processing:</strong> All PDF conversions (Image to PDF, Word to PDF, etc.) happen directly on your device. Your documents are NEVER uploaded to any server.</li>
-    </ul>
+    <!-- Images -->
+    <div class="image-container">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <img src="image4.jpg" alt="Image 4">
+    </div>
 
-    <h2>2. Permissions We Request</h2>
-    <p>To provide core features, we require the following permissions:</p>
-    <ul>
-        <li><strong>Camera Access:</strong> Required for the "Smart Scan" feature to capture document images.</li>
-        <li><strong>Storage Access:</strong> Required to read your existing documents and save the converted PDF/Word files to your device.</li>
-    </ul>
+    <!-- Privacy Policy -->
+    <div class="content">
+        <h1>Privacy Policy</h1>
+        <p class="date">Last updated: March, 2026</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>Our app does not use any third-party tracking, analytics, or advertising SDKs that collect user behavior data.</p>
+        <p>Welcome to <strong>Core Pdf</strong>. Your privacy is our top priority. This Privacy Policy outlines how we handle your data when you use our application.</p>
 
-    <h2>4. Data Security</h2>
-    <p>Since all operations are local, your data is as secure as your device itself. We recommend keeping your device updated with the latest security patches.</p>
+        <h2>1. Data Collection & Privacy</h2>
+        <p><span class="highlight">We do NOT collect, store, or share any of your personal data.</span> Our app is designed to work <strong>100% offline</strong> for your security.</p>
+        <ul>
+            <li><strong>No Account Required:</strong> You don't need to sign up or provide an email to use our app.</li>
+            <li><strong>Local Processing:</strong> All PDF conversions happen directly on your device.</li>
+        </ul>
 
-    <h2>5. Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <br>
-    <strong>Email: ng4391316@gmail.com</strong></p>
+        <h2>2. Permissions We Request</h2>
+        <ul>
+            <li><strong>Camera Access:</strong> Required for scanning documents.</li>
+            <li><strong>Storage Access:</strong> Required to save files.</li>
+        </ul>
 
-    <p style="margin-top: 30px; font-size: 12px; color: #888;">&copy; 2026 Core Pdf. All rights reserved.</p>
+        <h2>3. Third-Party Services</h2>
+        <p>We do not use tracking or analytics services.</p>
+
+        <h2>4. Data Security</h2>
+        <p>Your data stays on your device.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>Email: ng4391316@gmail.com</p>
+
+        <p style="margin-top: 30px; font-size: 12px; color: #888;">© 2026 Core Pdf. All rights reserved.</p>
+    </div>
+
 </body>
 </html>
